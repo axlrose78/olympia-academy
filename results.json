@@ -49,8 +49,10 @@
   "students": [
     {
       "name": "Akshita M.",
+      "photo": "images/students/akshita.jpg",
       "class": "7",
       "school": "B.K. Birla Public School",
+      "year": "2026",
       "categories": ["olympiads", "homi-bhabha", "mat-jmo"],
       "achievements": {
         "olympiads": ["IMO Gold", "NSO Gold"],
@@ -62,6 +64,7 @@
       "name": "Manthan H.",
       "class": "7",
       "school": "B.K. Birla Public School",
+      "year": "2026",
       "categories": ["mat-jmo"],
       "achievements": {
         "mat-jmo": ["MAT 2026", "JMO Preparation"]
@@ -80,6 +83,7 @@
       "name": "Adya M.",
       "class": "1",
       "school": "B.K. Birla Public School",
+      "year": "2026",
       "categories": ["olympiads"],
       "achievements": {
         "olympiads": ["IMO Gold"]
