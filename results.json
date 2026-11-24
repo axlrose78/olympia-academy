@@ -1,0 +1,149 @@
+
+{
+  "stats": [
+    {
+      "value": 4,
+      "suffix": "",
+      "label": "IMO & NSO Golds"
+    },
+    {
+      "value": 2,
+      "suffix": "",
+      "label": "MAT 2026 Appeared"
+    },
+    {
+      "value": 100,
+      "suffix": "%",
+      "label": "MAT Qualification"
+    },
+    {
+      "value": 1,
+      "suffix": "",
+      "label": "Homi Bhabha Qualifier"
+    }
+  ],
+
+  "categories": [
+    {
+      "id": "olympiads",
+      "title": "Olympiads",
+      "description": "Celebrating excellence in international and national Olympiads."
+    },
+    {
+      "id": "homi-bhabha",
+      "title": "Homi Bhabha",
+      "description": "Recognising young science achievers."
+    },
+    {
+      "id": "mat-jmo",
+      "title": "MAT / JMO",
+      "description": "Celebrating mathematical aptitude and problem-solving."
+    },
+    {
+      "id": "others",
+      "title": "Others",
+      "description": "Other academic achievements and milestones."
+    }
+  ],
+
+  "students": [
+    {
+      "name": "Akshita M.",
+      "class": "7",
+      "school": "B.K. Birla Public School",
+      "categories": ["olympiads", "homi-bhabha", "mat-jmo"],
+      "achievements": {
+        "olympiads": ["IMO Gold", "NSO Gold"],
+        "homi-bhabha": ["Homi Bhabha"],
+        "mat-jmo": ["MAT 2025", "MAT 2026"]
+      }
+    },
+    {
+      "name": "Manthan H.",
+      "class": "7",
+      "school": "B.K. Birla Public School",
+      "categories": ["mat-jmo"],
+      "achievements": {
+        "mat-jmo": ["MAT 2026", "JMO Preparation"]
+      }
+    },
+    {
+      "name": "Yashvi M.",
+      "class": "3",
+      "school": "B.K. Birla Public School",
+      "categories": ["olympiads"],
+      "achievements": {
+        "olympiads": ["IMO Gold"]
+      }
+    },
+    {
+      "name": "Adya M.",
+      "class": "1",
+      "school": "B.K. Birla Public School",
+      "categories": ["olympiads"],
+      "achievements": {
+        "olympiads": ["IMO Gold"]
+      }
+    },
+    {
+      "name": "Student A.",
+      "class": "6",
+      "school": "Cambria International School",
+      "categories": ["olympiads", "homi-bhabha"],
+      "achievements": {
+        "olympiads": ["NSO Gold", "IEO Silver"],
+        "homi-bhabha": ["Level 1 Qualifier"]
+      }
+    },
+    {
+      "name": "Scholar B.",
+      "class": "8",
+      "school": "Podar International School",
+      "categories": ["mat-jmo", "others"],
+      "achievements": {
+        "mat-jmo": ["JMO Top 50", "MAT 2026"],
+        "others": ["IPM Merit Scholarship"]
+      }
+    },
+    {
+      "name": "Achiever C.",
+      "class": "5",
+      "school": "Lourdes High School",
+      "categories": ["olympiads", "others"],
+      "achievements": {
+        "olympiads": ["IMO Silver"],
+        "others": ["Spell Bee State Finalist"]
+      }
+    },
+    {
+      "name": "Learner D.",
+      "class": "6",
+      "school": "B.K. Birla Public School",
+      "categories": ["homi-bhabha"],
+      "achievements": {
+        "homi-bhabha": ["Homi Bhabha Practical Round"]
+      }
+    },
+    {
+      "name": "Candidate E.",
+      "class": "4",
+      "school": "St. Xavier's High School",
+      "categories": ["olympiads"],
+      "achievements": {
+        "olympiads": ["IMO Gold", "NCO Distinction"]
+      }
+    },
+    {
+      "name": "Student F.",
+      "class": "8",
+      "school": "Arya Gurukul",
+      "categories": ["olympiads", "mat-jmo", "others"],
+      "achievements": {
+        "olympiads": ["IMO Zonal Rank 3"],
+        "mat-jmo": ["MAT 2026"],
+        "others": ["NTSE Foundation Topper"]
+      }
+    }
+  ]
+}
+
