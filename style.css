@@ -2114,7 +2114,7 @@ textarea:focus {
 @media (max-width: 750px) {
   #results .inner {
     gap: 15px;
-    padding: 4px 2px 14px;
+    padding: 0px 0px 0px;
   }
 
   .results-top {
