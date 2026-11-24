@@ -156,6 +156,7 @@ header.is-compact .brand-name {
     letter-spacing: .05em;
 }
 
+
 .brand-stacked, .brand-inline {
     grid-area: 1 / 1;
     transition: opacity .4s ease, transform .55s cubic-bezier(.2, .75, .25, 1);
@@ -215,7 +216,7 @@ header.is-compact .brand b {
 }
 
 .brand i {
-    color: var(--wine);
+    color: var(--accent);
     font-style: normal;
 }
 
@@ -1343,6 +1344,116 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
+/* =====================================
+   RESPONSIVE HEADER + REGISTER BUTTON
+===================================== */
+
+/* Desktop register button */
+header .header-register {
+    padding: 10px 22px;
+    margin-left: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    box-shadow: 0 5px 18px -8px var(--accent);
+}
+
+/* Tablet and mobile navigation */
+@media (max-width: 820px) {
+
+    header,
+    header.is-compact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 7px 10px;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 9px 14px 8px;
+    }
+
+    /* First row: branding */
+    header .brand {
+        order: 1;
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    header .brand svg {
+        flex-shrink: 0;
+        width: 28px;
+        height: 32px;
+    }
+
+    header.is-compact .brand {
+        gap: 10px;
+    }
+
+    header.is-compact .brand svg {
+        width: 25px;
+        height: 29px;
+        transform: none;
+    }
+
+    header .brand-name {
+        font-size: clamp(15px, 3.8vw, 21px);
+        letter-spacing: .035em;
+    }
+
+    header.is-compact .brand-name {
+        font-size: clamp(15px, 3.8vw, 21px);
+    }
+
+    header .brand-stacked {
+        display: none;
+    }
+
+    header .brand-inline {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    /* First row: action buttons */
+    header #loginBtn {
+        order: 2;
+        flex: 0 0 auto;
+        font-size: 11px;
+    }
+
+    header .header-register {
+        order: 3;
+        flex: 0 0 auto;
+        margin-left: 0;
+        padding: 8px 13px;
+        font-size: 11px;
+    }
+
+    /* Second row: navigation remains visible */
+    header .links {
+        order: 4;
+        display: flex;
+        flex: 1 1 100%;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(22px, 8vw, 45px);
+        padding-top: 5px;
+        border-top: 1px solid rgba(127, 184, 188, .12);
+        font-size: 12px;
+    }
+
+    header .links a {
+        padding: 4px 0;
+    }
+
+    /* Content must start below the taller header */
+    .panel {
+        padding-top: 112px;
+    }
+}
+
 @media (max-width: 900px) {
     #results .inner {
         display: grid;
@@ -1532,7 +1643,136 @@ input:focus, select:focus, textarea:focus {
         font-size: 16px;
     }
 }
+/* =====================================
+   HALL OF FAME — MOBILE RESPONSIVENESS
+===================================== */
 
+/* Make card positioning predictable */
+.hall-card {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr) 90px;
+    align-items: start;
+}
+
+.hall-info {
+    min-width: 0;
+}
+
+.hall-profile {
+    width: 90px;
+    height: 90px;
+    align-self: start;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.hall-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .category-students {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hall-card {
+        grid-template-columns: minmax(0, 1fr) 76px;
+        gap: 10px;
+        padding: 12px;
+        min-height: 155px;
+    }
+
+    .hall-profile {
+        width: 76px;
+        height: 76px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    #results {
+        overflow: hidden;
+    }
+
+    #results .inner {
+        min-height: 0;
+        height: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    .results-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .category-students {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .hall-card {
+        grid-template-columns: minmax(0, 1fr) 82px;
+        min-height: 125px;
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .hall-profile {
+        width: 82px;
+        height: 82px;
+    }
+
+    .hall-info h3 {
+        font-size: 19px;
+        margin-bottom: 8px;
+    }
+
+    .hall-info small {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    .hall-info .tag {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .category-page {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .hall-card {
+        grid-template-columns: minmax(0, 1fr) 68px;
+        gap: 8px;
+        padding: 11px;
+    }
+
+    .hall-profile {
+        width: 68px;
+        height: 68px;
+    }
+
+    .hall-info h3 {
+        font-size: 17px;
+    }
+
+    .hall-info small {
+        font-size: 10px;
+    }
+}
 /* 14. ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {

@@ -50,8 +50,17 @@
       </span>
 
     </a>
-    <nav class="links"><a data-go="1">About</a><a data-go="2">Results</a><a data-go="3">Contact</a></nav>
+    <nav class="links">
+      <a data-go="1">About</a>
+      <a data-go="2">Results</a>
+      <a data-go="3">Contact</a>
+    </nav>
+
     <button class="btn btn-ghost" id="loginBtn">Login</button>
+
+    <button class="btn btn-accent header-register" data-open>
+      Register
+    </button>
   </header>
 
   <main id="scroller">
@@ -410,17 +419,17 @@
 
     <div>
       ${(student.achievements[category.id] || [])
-        .map(achievement => {
-          const medalClass = achievement.toLowerCase().includes("gold")
-            ? "gold"
-            : achievement.toLowerCase().includes("silver")
-            ? "silver"
-            : achievement.toLowerCase().includes("bronze")
-            ? "bronze"
-            : "";
+                .map(achievement => {
+                  const medalClass = achievement.toLowerCase().includes("gold")
+                    ? "gold"
+                    : achievement.toLowerCase().includes("silver")
+                      ? "silver"
+                      : achievement.toLowerCase().includes("bronze")
+                        ? "bronze"
+                        : "";
 
-          return `<span class="tag ${medalClass}">${escapeHTML(achievement)}</span>`;
-        }).join('')}
+                  return `<span class="tag ${medalClass}">${escapeHTML(achievement)}</span>`;
+                }).join('')}
     </div>
 
   </div>
