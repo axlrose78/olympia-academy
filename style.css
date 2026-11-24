@@ -196,7 +196,7 @@ header.is-compact .brand-inline {
     pointer-events: auto;
 }
 
-/* Legacy brand text (kept in case \\\\\\\<b> / \\\\\\\<i> are still used in the HTML) */
+/* Legacy brand text (kept in case \\\\\\\\\\\\\\\<b> / \\\\\\\\\\\\\\\<i> are still used in the HTML) */
 
 header .brand b {
     color: #fff;
@@ -734,20 +734,6 @@ Your responsive @media rules further down still work as-is.
 
 /* 8e. Hall-of-fame cards */
 
-.hall-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 110px;
-    align-items: start;
-    gap: 16px;
-    min-height: 210px;
-    padding: 18px;
-    overflow: hidden;
-    border: 1px solid rgba(127, 184, 188, .12);
-    border-radius: 16px;
-    background: radial-gradient(circle at 100% 0, rgba(117, 3, 35, 0.214), transparent 55%), linear-gradient(145deg, #1c383b, #173033);
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-}
-
 .hall-card::before {
     position: absolute;
     top: 0;
@@ -778,15 +764,6 @@ Your responsive @media rules further down still work as-is.
     width: 64px;
 }
 
-.hall-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-width: 0;
-    align-items: flex-start;
-    width: 100%;
-}
-
 /* Hall of Fame student names */
 
 .hall-info h3 {
@@ -803,23 +780,6 @@ Your responsive @media rules further down still work as-is.
     color: var(--muted);
     font-size: 12px;
     line-height: 1.5;
-}
-
-.hall-profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    height: 110px;
-    align-self: center;
-    overflow: hidden;
-}
-
-.hall-profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
 }
 
 .profile-placeholder {
@@ -1211,29 +1171,88 @@ input:focus, select:focus, textarea:focus {
 
 /* 13. RESPONSIVE (largest to smallest) */
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     #results .inner {
         gap: 18px;
         padding: 6px 4px 16px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 16px;
+        height: 100%;
+        padding: 8px 16px 14px;
     }
+
     .results-top {
         grid-template-columns: minmax(0, 1fr);
         gap: 6px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
     }
+
+    .results-intro {
+        flex: 1 1 0;
+    }
+
     .results-intro h2 {
         font-size: clamp(36px, 7vw, 52px);
+        font-size: clamp(32px, 5vw, 46px);
     }
+
+    .results-intro h2::after {
+        margin-top: 10px;
+    }
+
+    .results-intro .lead {
+        font-size: 13px;
+    }
+
     .stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: min(100%, 360px);
+        flex: 0 0 300px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
     }
+
     .stat {
         min-height: 30px;
+        min-height: 65px;
+        margin: 0;
+        padding: 8px;
+    }
+
+    .stat b {
+        font-size: 25px;
+    }
+
+    .results-content {
+        min-height: 0;
+    }
+
+    .category-students {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hall-card {
+        grid-template-columns: minmax(0, 1fr) 76px;
+        gap: 10px;
+        padding: 12px;
+        min-height: 155px;
+    }
+
+    .hall-profile {
+        width: 76px;
+        height: 76px;
     }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 650px) {
     /* header */
+
     header {
         display: flex;
         align-items: center;
@@ -1244,78 +1263,373 @@ input:focus, select:focus, textarea:focus {
         min-height: 76px;
         padding: 0 18px;
     }
+
     header.is-compact {
         height: 62px;
         min-height: 62px;
         padding: 0 16px;
     }
-    header .links {
-        display: none;
+
+    header .brand b {
+        font-size: 64px;
     }
+
+    header.is-compact .brand b {
+        font-size: 20px;
+    }
+
+    header.is-compact #loginBtn {
+        padding: 7px 15px;
+    }
+
+    /* layout */
+
+    .dots {
+        right: 8px;
+    }
+
+    #home .hero {
+        transform: translateY(80px);
+    }
+
+    .cols, .cgrid {
+        grid-template-columns: 2fr;
+        margin: 20px 0 0 2px;
+    }
+
+    .cols h2 {
+        font-size: 28px;
+    }
+
+    .cols p {
+        font-size: 13px;
+    }
+
+    /* First row: branding */
+
     header .brand {
         display: flex;
         flex: 1;
         align-items: center;
         gap: 20px;
         min-width: 0;
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 10px;
     }
-    header.is-compact .brand {
-        gap: 9px;
-    }
+
     header .brand svg {
         flex-shrink: 0;
         width: 30px;
         height: 35px;
+        flex-shrink: 0;
+        width: 28px;
+        height: 32px;
     }
+
+    header.is-compact .brand {
+        gap: 9px;
+        gap: 10px;
+    }
+
     header.is-compact .brand svg {
         width: 26px;
         height: 30px;
         transform: translate(16px, 0);
+        width: 25px;
+        height: 29px;
+        transform: none;
     }
+
     header .brand-name {
         min-width: 0;
         font-size: clamp(16px, 4.5vw, 22px);
         letter-spacing: .045em;
+        font-size: clamp(15px, 3.8vw, 21px);
+        letter-spacing: .035em;
     }
+
     header.is-compact .brand-name {
         font-size: 0;
+        font-size: clamp(15px, 3.8vw, 21px);
     }
-    header .brand b {
-        font-size: 64px;
+
+    header .brand-stacked {
+        display: none;
     }
-    header.is-compact .brand b {
-        font-size: 20px;
+
+    header .brand-inline {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
     }
+
+    /* First row: action buttons */
+
     header #loginBtn {
         flex: 0 0 auto;
         padding: 8px 17px;
         font-size: 12px;
         white-space: nowrap;
+        order: 2;
+        flex: 0 0 auto;
+        font-size: 11px;
     }
-    header.is-compact #loginBtn {
-        padding: 7px 15px;
+
+    header .header-register {
+        order: 1;
+        flex: 0 0 auto;
+        margin-left: 0;
+        padding: 8px 13px;
+        font-size: 11px;
     }
-    /* layout */
+
+    header.is-compact .header-register {
+        padding: 8px 13px;
+        font-size: 11px;
+    }
+
+    /* Second row: navigation remains visible */
+
+    header .links {
+        display: none;
+        order: 4;
+        display: flex;
+        flex: 1 1 100%;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(22px, 8vw, 45px);
+        padding-top: 5px;
+        border-top: 1px solid rgba(127, 184, 188, .12);
+        font-size: 12px;
+    }
+
+    header .links a {
+        padding: 4px 0;
+    }
+
+    /* Content must start below the taller header */
+
     .panel {
         align-items: flex-start;
         padding: 90px 1px 1px;
         scrollbar-width: none;
+        padding-top: 112px;
     }
-    .dots {
-        right: 8px;
+
+    header, header.is-compact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 7px 10px;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 9px 14px 8px;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 9px 14px 8px !important;
+        gap: 7px 10px !important;
+        background: var(--bg) !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        transition: none !important;
     }
-    #home .hero {
-        transform: translateY(80px);
+
+    /* Logo and academy name */
+
+    header .brand, header.is-compact .brand {
+        gap: 10px !important;
+        transform: none !important;
+        transition: none !important;
     }
-    .cols, .cgrid {
-        grid-template-columns: 2fr;
-        margin: 20px 0 0 2px;
+
+    header .brand svg, header.is-compact .brand svg {
+        width: 28px !important;
+        height: 32px !important;
+        transform: none !important;
     }
-    .cols h2 {
-        font-size: 28px;
+
+    header .brand-name, header.is-compact .brand-name {
+        font-size: clamp(15px, 3.8vw, 21px) !important;
+        letter-spacing: .035em !important;
     }
-    .cols p {
-        font-size: 13px;
+
+    header .brand-stacked, header.is-compact .brand-stacked {
+        display: none !important;
+    }
+
+    header .brand-inline, header.is-compact .brand-inline {
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
+    }
+
+    /* Navigation text */
+
+    header .links, header.is-compact .links {
+        display: flex !important;
+        gap: clamp(22px, 8vw, 45px) !important;
+        font-size: 12px !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Login button */
+
+    header #loginBtn, header.is-compact #loginBtn {
+        padding: 7px 12px !important;
+        font-size: 11px !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Register button */
+
+    header .header-register, header.is-compact .header-register {
+        padding: 8px 13px !important;
+        font-size: 11px !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .results-intro h2 {
+        font-size: clamp(30px, 7vw, 38px);
+        margin-bottom: 8px;
+    }
+
+    .results-intro h2::after {
+        display: none;
+    }
+
+    .results-intro .lead {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .stat {
+        min-width: 0;
+        min-height: 58px;
+        margin: 0;
+        padding: 6px 3px;
+        gap: 4px;
+    }
+
+    .stat b {
+        font-size: 21px;
+    }
+
+    .stat span {
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+
+    .results-content {
+        gap: 6px;
+    }
+
+    .category-header {
+        gap: 8px;
+        padding: 4px 5px 8px;
+    }
+
+    .subheading {
+        font-size: 21px;
+    }
+
+    .category-description {
+        font-size: 11px;
+    }
+
+    .category-arrow {
+        width: 34px;
+        height: 34px;
+    }
+
+    .category-pagination {
+        min-width: 65px;
+        gap: 6px;
+    }
+
+    .tag {
+        margin: 6px 3px 0 0;
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+
+    #results {
+        overflow: hidden;
+    }
+
+    #results .inner {
+        gap: 12px;
+        padding: 8px 12px 12px;
+        min-height: 0;
+        height: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    .results-top {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stats {
+        flex: none;
+        width: 100%;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 7px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .category-students {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .hall-card {
+        min-height: 165px;
+        height: auto;
+        padding: 14px;
+        grid-template-columns: minmax(0, 1fr) 82px;
+        min-height: 125px;
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .hall-profile {
+        width: 82px;
+        height: 82px;
+    }
+
+    .hall-info h3 {
+        font-size: 18px;
+        font-size: 19px;
+        margin-bottom: 8px;
+    }
+
+    .hall-info small {
+        font-size: 10px;
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    .hall-info .tag {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .category-page {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 
@@ -1342,91 +1656,6 @@ header.is-compact .header-register {
 
 /* Tablet and mobile navigation */
 
-@media (max-width: 820px) {
-    header,
-    header.is-compact {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 7px 10px;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        padding: 9px 14px 8px;
-    }
-    /* First row: branding */
-    header .brand {
-        flex: 1 1 auto;
-        min-width: 0;
-        gap: 10px;
-    }
-    header .brand svg {
-        flex-shrink: 0;
-        width: 28px;
-        height: 32px;
-    }
-    header.is-compact .brand {
-        gap: 10px;
-    }
-    header.is-compact .brand svg {
-        width: 25px;
-        height: 29px;
-        transform: none;
-    }
-    header .brand-name {
-        font-size: clamp(15px, 3.8vw, 21px);
-        letter-spacing: .035em;
-    }
-    header.is-compact .brand-name {
-        font-size: clamp(15px, 3.8vw, 21px);
-    }
-    header .brand-stacked {
-        display: none;
-    }
-    header .brand-inline {
-        opacity: 1;
-        transform: none;
-        pointer-events: auto;
-    }
-    /* First row: action buttons */
-    header #loginBtn {
-        order: 2;
-        flex: 0 0 auto;
-        font-size: 11px;
-    }
-    header .header-register {
-        order: 1;
-        flex: 0 0 auto;
-        margin-left: 0;
-        padding: 8px 13px;
-        font-size: 11px;
-    }
-    header.is-compact .header-register {
-        padding: 8px 13px;
-        font-size: 11px;
-    }
-    /* Second row: navigation remains visible */
-    header .links {
-        order: 4;
-        display: flex;
-        flex: 1 1 100%;
-        align-items: center;
-        justify-content: center;
-        gap: clamp(22px, 8vw, 45px);
-        padding-top: 5px;
-        border-top: 1px solid rgba(127, 184, 188, .12);
-        font-size: 12px;
-    }
-    header .links a {
-        padding: 4px 0;
-    }
-    /* Content must start below the taller header */
-    .panel {
-        padding-top: 112px;
-    }
-}
-
 /* =========================================
 
 FINAL FIX — DISABLE ALL MOBILE HEADER
@@ -1435,252 +1664,55 @@ SCROLL-TRIGGERED SIZE CHANGES
 
 ========================================= */
 
-@media (max-width: 820px) {
-    header,
-    header.is-compact {
-        height: auto !important;
-        min-height: 0 !important;
-        padding: 9px 14px 8px !important;
-        gap: 7px 10px !important;
-        background: var(--bg) !important;
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-        transition: none !important;
-    }
-    /* Logo and academy name */
-    header .brand,
-    header.is-compact .brand {
-        gap: 10px !important;
-        transform: none !important;
-        transition: none !important;
-    }
-    header .brand svg,
-    header.is-compact .brand svg {
-        width: 28px !important;
-        height: 32px !important;
-        transform: none !important;
-    }
-    header .brand-name,
-    header.is-compact .brand-name {
-        font-size: clamp(15px, 3.8vw, 21px) !important;
-        letter-spacing: .035em !important;
-    }
-    header .brand-stacked,
-    header.is-compact .brand-stacked {
-        display: none !important;
-    }
-    header .brand-inline,
-    header.is-compact .brand-inline {
-        opacity: 1 !important;
-        transform: none !important;
-        pointer-events: auto !important;
-    }
-    /* Navigation text */
-    header .links,
-    header.is-compact .links {
-        display: flex !important;
-        gap: clamp(22px, 8vw, 45px) !important;
-        font-size: 12px !important;
-        transform: none !important;
-        transition: none !important;
-    }
-    /* Login button */
-    header #loginBtn,
-    header.is-compact #loginBtn {
-        padding: 7px 12px !important;
-        font-size: 11px !important;
-        transform: none !important;
-        transition: none !important;
-    }
-    /* Register button */
-    header .header-register,
-    header.is-compact .header-register {
-        padding: 8px 13px !important;
-        font-size: 11px !important;
-        transform: none !important;
-        transition: none !important;
-    }
-}
-
 /* Very narrow phones */
 
 @media (max-width: 420px) {
-    header,
-    header.is-compact {
+    header, header.is-compact {
         padding: 8px 10px !important;
     }
-    header .brand-name,
-    header.is-compact .brand-name {
+
+    header .brand-name, header.is-compact .brand-name {
         font-size: 14px !important;
     }
-    header #loginBtn,
-    header.is-compact #loginBtn {
+
+    header #loginBtn, header.is-compact #loginBtn {
         display: none !important;
     }
-    header .header-register,
-    header.is-compact .header-register {
+
+    header .header-register, header.is-compact .header-register {
         padding: 7px 11px !important;
         font-size: 10px !important;
     }
-    header .links,
-    header.is-compact .links {
+
+    header .links, header.is-compact .links {
         gap: 0 !important;
         justify-content: space-around !important;
         font-size: 11px !important;
     }
-}
 
-@media (max-width: 900px) {
-    #results .inner {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto minmax(0, 1fr);
-        gap: 16px;
-        height: 100%;
-        padding: 8px 16px 14px;
-    }
-    .results-top {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .results-intro {
-        flex: 1 1 0;
-    }
-    .results-intro h2 {
-        font-size: clamp(32px, 5vw, 46px);
-    }
-    .results-intro h2::after {
-        margin-top: 10px;
-    }
-    .results-intro .lead {
-        font-size: 13px;
-    }
-    .stats {
-        flex: 0 0 300px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-    }
-    .stat {
-        min-height: 65px;
-        margin: 0;
-        padding: 8px;
-    }
-    .stat b {
-        font-size: 25px;
-    }
-    .results-content {
-        min-height: 0;
-    }
-    .category-students {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 750px) {
-    #results .inner {
-        gap: 12px;
-        padding: 8px 12px 12px;
-    }
-    .results-top {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-    }
-    .results-intro h2 {
-        font-size: clamp(30px, 7vw, 38px);
-        margin-bottom: 8px;
-    }
-    .results-intro h2::after {
-        display: none;
-    }
-    .results-intro .lead {
-        font-size: 12px;
-        line-height: 1.45;
-    }
-    .stats {
-        flex: none;
-        width: 100%;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 7px;
-    }
-    .stat {
-        min-width: 0;
-        min-height: 58px;
-        margin: 0;
-        padding: 6px 3px;
-        gap: 4px;
-    }
-    .stat b {
-        font-size: 21px;
-    }
-    .stat span {
-        font-size: 8px;
-        letter-spacing: 0;
-    }
-    .results-content {
-        gap: 6px;
-    }
-    .category-header {
-        gap: 8px;
-        padding: 4px 5px 8px;
-    }
-    .subheading {
-        font-size: 21px;
-    }
-    .category-description {
-        font-size: 11px;
-    }
-    .category-arrow {
-        width: 34px;
-        height: 34px;
-    }
-    .category-pagination {
-        min-width: 65px;
-        gap: 6px;
-    }
-    .category-students {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 9px;
-    }
-    .hall-card {
-        min-height: 165px;
-        height: auto;
-        padding: 14px;
-    }
-    .hall-info h3 {
-        font-size: 18px;
-    }
-    .hall-info small {
-        font-size: 10px;
-    }
-    .tag {
-        margin: 6px 3px 0 0;
-        padding: 3px 8px;
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 420px) {
     #results .inner {
         padding-right: 8px;
         padding-left: 8px;
     }
+
     .stats {
         gap: 5px;
     }
+
     .stat span {
         font-size: 7px;
     }
+
     .category-arrow {
         width: 30px;
         height: 30px;
     }
+
     .hall-card {
         min-height: 115px;
         padding: 11px;
     }
+
     .hall-info h3 {
         font-size: 16px;
     }
@@ -1695,16 +1727,40 @@ HALL OF FAME — MOBILE RESPONSIVENESS
 /* Make card positioning predictable */
 
 .hall-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 110px;
+    align-items: start;
+    gap: 16px;
+    min-height: 210px;
+    padding: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(127, 184, 188, .12);
+    border-radius: 16px;
+    background: radial-gradient(circle at 100% 0, rgba(117, 3, 35, 0.214), transparent 55%), linear-gradient(145deg, #1c383b, #173033);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
     position: relative;
     grid-template-columns: minmax(0, 1fr) 90px;
     align-items: start;
 }
 
 .hall-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 0;
+    align-items: flex-start;
+    width: 100%;
     min-width: 0;
 }
 
 .hall-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    align-self: center;
+    overflow: hidden;
     width: 90px;
     height: 90px;
     align-self: start;
@@ -1716,97 +1772,15 @@ HALL OF FAME — MOBILE RESPONSIVENESS
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Tablets */
 
-@media (max-width: 900px) {
-    .category-students {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .hall-card {
-        grid-template-columns: minmax(0, 1fr) 76px;
-        gap: 10px;
-        padding: 12px;
-        min-height: 155px;
-    }
-    .hall-profile {
-        width: 76px;
-        height: 76px;
-    }
-}
-
 /* Mobile phones */
-
-@media (max-width: 600px) {
-    #results {
-        overflow: hidden;
-    }
-    #results .inner {
-        min-height: 0;
-        height: 100%;
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto minmax(0, 1fr);
-    }
-    .results-top {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        width: 100%;
-    }
-    .category-students {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 10px;
-    }
-    .hall-card {
-        grid-template-columns: minmax(0, 1fr) 82px;
-        min-height: 125px;
-        padding: 14px;
-        gap: 12px;
-    }
-    .hall-profile {
-        width: 82px;
-        height: 82px;
-    }
-    .hall-info h3 {
-        font-size: 19px;
-        margin-bottom: 8px;
-    }
-    .hall-info small {
-        font-size: 11px;
-        overflow-wrap: anywhere;
-    }
-    .hall-info .tag {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-    .category-page {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-}
-
-/* Very small phones */
-
-@media (max-width: 360px) {
-    .hall-card {
-        grid-template-columns: minmax(0, 1fr) 68px;
-        gap: 8px;
-        padding: 11px;
-    }
-    .hall-profile {
-        width: 68px;
-        height: 68px;
-    }
-    .hall-info h3 {
-        font-size: 17px;
-    }
-    .hall-info small {
-        font-size: 10px;
-    }
-}
 
 /* 14. ACCESSIBILITY */
 
@@ -1817,6 +1791,7 @@ HALL OF FAME — MOBILE RESPONSIVENESS
         scroll-behavior: auto !important;
         transition-duration: .01ms !important;
     }
+
     header, header * {
         transition: none !important;
     }
