@@ -22,9 +22,9 @@
   try { await loadSharedPartials(); }
   catch (error) { console.error("Page setup failed:", error); }
   // 1. Highlight active nav link based on visible section
-  const navLinks = [...document.querySelectorAll('header .links a[href^="#"]')];
+  const navLinks = [...document.querySelectorAll('header .links a[href*="#"]')];
   const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute("href")))
+    .map((link) => document.querySelector(new URL(link.href).hash))
     .filter(Boolean);
 
   if (sections.length && "IntersectionObserver" in window) {
