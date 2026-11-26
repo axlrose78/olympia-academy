@@ -3,7 +3,24 @@
    Active section nav, Hall of Fame, Hero carousel, Testimonials
    ========================================================= */
 
-(() => {
+(async () => {
+  async function loadSharedPartials() {
+    const [headerResponse, formsResponse] = await Promise.all([
+      fetch("./header.html"), fetch("./forms.html")
+    ]);
+    if (!headerResponse.ok || !formsResponse.ok) throw new Error("Could not load shared page components");
+    document.getElementById("header-container").innerHTML = await headerResponse.text();
+    document.getElementById("forms-container").innerHTML = await formsResponse.text();
+    await new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "./app.js";
+      script.onload = resolve;
+      script.onerror = () => reject(new Error("Could not load app.js"));
+      document.body.appendChild(script);
+    });
+  }
+  try { await loadSharedPartials(); }
+  catch (error) { console.error("Page setup failed:", error); }
   // 1. Highlight active nav link based on visible section
   const navLinks = [...document.querySelectorAll('header .links a[href^="#"]')];
   const sections = navLinks
