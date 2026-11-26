@@ -10,15 +10,16 @@
           <div class="reg-col">
             <label for="regStudent">Student name</label>
             <input id="regStudent" name="student" autocomplete="name" required>
-            <div class="row">
-              <div><label for="regClass">Class</label><select id="regClass" name="cls" required><option value="">Select</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
-              <div><label for="regSchool">School</label><input id="regSchool" name="school"></div>
-            </div>
+            <label for="regClass">Class</label>
+            <select id="regClass" name="cls" required>
+              <option value="">Select</option>
+              <option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option>
+            </select>
             <label for="regParent">Parent name</label><input id="regParent" name="parent" autocomplete="name" required>
-            <div class="row">
-              <div><label for="regPhone">Phone</label><input id="regPhone" name="phone" type="tel" pattern="[0-9+\-\s()]{10,16}" title="Enter a valid phone number" autocomplete="tel" required></div>
-              <div><label for="regEmail">Email</label><input id="regEmail" name="email" type="email" autocomplete="email"></div>
-            </div>
+            <label for="regPhone">Phone</label>
+            <input id="regPhone" name="phone" type="tel" pattern="[0-9+\-\s()]{10,16}"
+              title="Enter a valid phone number" autocomplete="tel" required>
           </div>
           <div class="reg-col-side">
             <div><span class="lbl">Interested in (select any)</span><div class="chips" id="chips"></div></div>
