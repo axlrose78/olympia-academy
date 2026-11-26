@@ -202,10 +202,8 @@
         `New registration${nl}${nl}` +
         `Student: ${enc(data.student)}${nl}` +
         `Class: ${enc(data.cls)}${nl}` +
-        `School: ${enc(data.school)}${nl}` +
         `Parent: ${enc(data.parent)}${nl}` +
         `Phone: ${enc(data.phone)}${nl}` +
-        `Email: ${enc(data.email)}${nl}` +
         `Interested in: ${enc(data.exam)}${nl}` +
         `Message: ${enc(data.msg)}`;
 
