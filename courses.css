@@ -302,3 +302,100 @@ blockquote {
     transform: none;
   }
 }
+
+
+@media (max-width: 650px) {
+  .hero {
+    padding: calc(var(--header-offset, 92px) + 24px) 0 42px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 10vw, 52px);
+    line-height: 1.06;
+  }
+
+  .hero .lead {
+    margin: 16px 0 22px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero .actions {
+    gap: 10px;
+  }
+
+  .hero .actions .btn,
+  .cta .btn {
+    min-height: 44px;
+    padding: 11px 17px;
+    font-size: 14px;
+  }
+
+  .hero-meta {
+    gap: 8px 18px;
+    margin-top: 28px;
+    font-size: 12.5px;
+  }
+
+  .courses-section {
+    padding: 48px 0;
+  }
+
+  .grid {
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .course {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .course h3 {
+    font-size: 23px;
+  }
+
+  .ico {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .quote-band {
+    padding: 48px 0;
+  }
+
+  .approach {
+    gap: 26px;
+  }
+
+  .approach .panel {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .approach .panel p {
+    font-size: 22px;
+  }
+
+  .checks {
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .cta .lead {
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .actions .btn,
+  .cta .btn {
+    padding-inline: 15px;
+    font-size: 13.5px;
+  }
+
+  .course {
+    padding: 20px;
+  }
+}
