@@ -1,0 +1,298 @@
+/* =========================================================
+   OLYMPIA ACADEMY — SHARED HEADER
+   ========================================================= */
+
+header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  height: 144px;
+  padding: 0 clamp(24px, 6vw, 124px);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(var(--bg), rgba(11, 24, 25, .82));
+  backdrop-filter: blur(8px);
+  transition: height .4s cubic-bezier(.2, .75, .25, 1), padding .4s cubic-bezier(.2, .75, .25, 1), background .3s ease, box-shadow .3s ease;
+}
+
+header.is-compact {
+  height: 68px;
+  padding: 0 30px;
+  background: rgba(11, 24, 25, .95);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .2);
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 23px;
+  transition: gap .4s cubic-bezier(.2, .75, .25, 1);
+}
+
+header.is-compact .brand {
+  gap: 14px;
+}
+
+.brand-logo {
+
+  width: 72px;
+  height: 96px;
+  transition: width .4s cubic-bezier(.2, .75, .25, 1), height .4s cubic-bezier(.2, .75, .25, 1);
+}
+
+header.is-compact .brand-logo {
+  width: 28px;
+  height: 32px;
+}
+
+.brand-name {
+  display: grid;
+  align-items: center;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.15;
+  transition: font-size .4s cubic-bezier(.2, .75, .25, 1), letter-spacing .4s ease;
+}
+
+header.is-compact .brand-name {
+  font-size: 21px;
+  letter-spacing: .05em;
+}
+
+.brand-stacked,
+.brand-inline {
+  grid-area: 1 / 1;
+  transition: opacity .3s ease, transform .4s cubic-bezier(.2, .75, .25, 1);
+}
+
+.brand-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-inline {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.brand-inline i {
+  color: var(--accent);
+  font-style: normal;
+}
+
+header.is-compact .brand-stacked {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+header.is-compact .brand-inline {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Navigation links */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 500;
+  transition: gap .35s ease, font-size .35s ease;
+}
+
+header.is-compact .links {
+  font-size: 14px;
+}
+
+.links a {
+  position: relative;
+  padding: 8px 0;
+  transition: color var(--transition);
+}
+
+.links a:hover,
+.links a.on {
+  color: #fff;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width .3s ease;
+}
+
+.links a:hover::after,
+.links a.on::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header #loginBtn,
+header .header-register {
+  padding: 10px 22px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+header.is-compact #loginBtn,
+header.is-compact .header-register {
+  padding: 8px 18px;
+  font-size: 13.5px;
+}
+
+@media (max-width: 1260px) {
+  header,
+  header.is-compact {
+    padding: 0 24px;
+  }
+
+  .brand {
+    gap: 14px;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 46px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .links {
+    gap: 40px;
+    font-size: 15px;
+  }
+  header,
+  header.is-compact {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    height: auto;
+    padding: 10px 16px 8px;
+    background: rgba(11, 24, 25, .96);
+    box-shadow: none;
+  }
+
+  header .brand,
+  header.is-compact .brand {
+    flex: 1 1 auto;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  header .brand-logo,
+  header.is-compact .brand-logo {
+    width: 26px;
+    height: 30px;
+  }
+
+  header .brand-name,
+  header.is-compact .brand-name {
+    font-size: clamp(16px, 4vw, 20px);
+    letter-spacing: .04em;
+  }
+
+  header .brand-stacked,
+  header.is-compact .brand-stacked {
+    display: none;
+  }
+
+  header .brand-inline,
+  header.is-compact .brand-inline {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  header .header-actions {
+    order: 2;
+    flex: 0 0 auto;
+    gap: 6px;
+  }
+
+  header #loginBtn,
+  header.is-compact #loginBtn,
+  header .header-register,
+  header.is-compact .header-register {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  header .links,
+  header.is-compact .links {
+    order: 3;
+    flex: 1 1 100%;
+    justify-content: center;
+    gap: clamp(18px, 7vw, 36px);
+    padding-top: 6px;
+    border-top: 1px solid rgba(127, 184, 188, .12);
+    font-size: 13px;
+  }
+
+  header .links a {
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  header,
+  header.is-compact {
+    padding: 8px 12px;
+  }
+
+  header .brand-name,
+  header.is-compact .brand-name {
+    font-size: 15px;
+  }
+
+  header #loginBtn,
+  header.is-compact #loginBtn,
+  header .header-register,
+  header.is-compact .header-register {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  header .links,
+  header.is-compact .links {
+    gap: 0;
+    justify-content: space-around;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header,
+  header * {
+    transition: none !important;
+  }
+}
