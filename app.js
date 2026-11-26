@@ -44,10 +44,19 @@
   // 2. Compact header on scroll
   const header = document.querySelector("header");
   if (header) {
+    const syncHeaderOffset = () => {
+      const height = Math.ceil(header.getBoundingClientRect().height);
+      document.documentElement.style.setProperty("--header-offset", `${height}px`);
+    };
     const updateHeader = () => {
       header.classList.toggle("is-compact", window.scrollY > 40);
+      syncHeaderOffset();
     };
     window.addEventListener("scroll", updateHeader, { passive: true });
+    window.addEventListener("resize", syncHeaderOffset, { passive: true });
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(syncHeaderOffset).observe(header);
+    }
     updateHeader();
   }
 
