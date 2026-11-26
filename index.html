@@ -19,41 +19,11 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
-  <script src="home.js" defer></script>
 </head>
 
 <body>
 
-  <header>
-    <a class="brand" href="#home">
-      <img class="brand-logo" src="images/logo.svg" alt="" aria-hidden="true">
-      <span class="brand-name">
-        <span class="brand-stacked">
-          <span>OLYMPIA</span>
-          <span>ACADEMY</span>
-        </span>
-        <span class="brand-inline">
-          OLYMPIA <i>·</i> ACADEMY
-        </span>
-      </span>
-    </a>
-
-    <nav class="links" aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#results">Results</a>
-      <a href="#contact">Contact</a>
-      <a href="courses.html">Courses</a>
-    </nav>
-
-
-    <div class="header-actions">
-      <button type="button" class="btn btn-ghost" id="loginBtn">Login</button>
-      <button type="button" class="btn btn-accent header-register" data-open>
-        Register
-      </button>
-    </div>
-  </header>
+  <div id="header-container"></div>
 
   <main>
 
@@ -199,40 +169,9 @@
     © <span id="yr"></span> Olympia Academy, Kalyan. All rights reserved.
   </footer>
 
-  <!-- EXTERNAL FORMS -->
-
+  <!-- Shared forms are loaded by home.js -->
   <div id="forms-container"></div>
-
-  <script>
-    async function initializeWebsite() {
-      try {
-        const response = await fetch("./forms.html");
-
-        if (!response.ok) {
-          throw new Error("Failed to load forms.html");
-        }
-
-        const html = await response.text();
-        document.getElementById("forms-container").innerHTML = html;
-
-        for (const src of ["app.js", "home.js"]) {
-          await new Promise((resolve, reject) => {
-            const script = document.createElement("script");
-            script.src = src;
-            script.onload = resolve;
-            script.onerror = () => reject(
-              new Error(`Failed to load ${src}`)
-            );
-            document.body.appendChild(script);
-          });
-        }
-      } catch (error) {
-        console.error("Website initialization failed:", error);
-      }
-    }
-
-    initializeWebsite();
-  </script>
+  <script src="home.js" defer></script>
 </body>
 
 </html>
