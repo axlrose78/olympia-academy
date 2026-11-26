@@ -4,7 +4,7 @@
    ========================================================= */
 
 html {
-  scroll-padding-top: 0;
+  scroll-padding-top: var(--header-offset, 144px);
   scroll-snap-type: y mandatory;
 }
 
@@ -2009,5 +2009,157 @@ html {
 
   .cgrid h3 {
     font-size: 20px;
+  }
+}
+
+/* Mobile spacing, anchor alignment and touch targets */
+@media (max-width: 650px) {
+  html {
+    scroll-padding-top: var(--header-offset, 92px);
+    scroll-padding-block-start: var(--header-offset, 92px);
+  }
+
+  .panel {
+    min-height: auto;
+    padding: 34px 0 28px;
+  }
+
+  .hero-panel {
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: calc(var(--header-offset, 92px) + 16px) 0 52px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 46px);
+    line-height: 1.08;
+  }
+
+  .hero p,
+  .cols p,
+  .results-intro .lead {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero p {
+    margin: 14px auto 22px;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-actions .btn,
+  .about-cta,
+  #contact > .wrap > .btn {
+    min-height: 44px;
+    padding: 11px 18px;
+    font-size: 14px;
+  }
+
+  .cols {
+    gap: 26px;
+  }
+
+  .exams {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .exam {
+    padding: 10px 12px;
+  }
+
+  .exam b {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .testimony-heading {
+    margin-top: 28px;
+  }
+
+  #results .wrap {
+    padding-inline: 20px;
+  }
+
+  .results-layout {
+    gap: 22px;
+  }
+
+  .results-top {
+    gap: 18px;
+  }
+
+  .results-top .stats {
+    flex: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat {
+    min-height: 84px;
+    padding: 12px 10px;
+  }
+
+  .category-viewport {
+    height: clamp(320px, 56svh, 460px);
+  }
+
+  .cgrid {
+    gap: 18px;
+    margin-top: 26px;
+    padding: 18px;
+  }
+
+  .site-footer {
+    padding: 22px 18px calc(22px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel {
+    padding-inline: 18px;
+  }
+
+  .hero-actions .btn,
+  .about-cta,
+  #contact > .wrap > .btn {
+    padding-inline: 15px;
+    font-size: 13.5px;
+  }
+
+  .exam {
+    padding: 9px 10px;
+  }
+
+  .results-intro h2 {
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1.05;
+  }
+
+  .stat span {
+    font-size: 10px;
+    letter-spacing: .06em;
+  }
+
+  .category-header {
+    align-items: flex-start;
+  }
+
+  .category-controls {
+    gap: 7px;
+  }
+
+  .category-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cgrid {
+    padding: 16px;
   }
 }
