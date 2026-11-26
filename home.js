@@ -19,8 +19,15 @@
       document.body.appendChild(script);
     });
   }
-  try { await loadSharedPartials(); }
-  catch (error) { console.error("Page setup failed:", error); }
+  try {
+    await loadSharedPartials();
+    if (location.hash) {
+      requestAnimationFrame(() => {
+        const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        target?.scrollIntoView({ block: "start", behavior: "instant" });
+      });
+    }
+  } catch (error) { console.error("Page setup failed:", error); }
   // 1. Highlight active nav link based on visible section
   const navLinks = [...document.querySelectorAll('header .links a[href*="#"]')];
   const sections = navLinks
