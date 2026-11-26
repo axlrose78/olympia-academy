@@ -1,103 +1,50 @@
-  <!-- REGISTER MODAL -->
-  <div class="modal" id="regModal" role="dialog" aria-modal="true" aria-labelledby="regTitle" aria-hidden="true">
-    <div class="box">
-      <button type="button" class="modal-close" data-close aria-label="Close registration form">×</button>
-      <div id="regForm">
-        <h3 id="regTitle">Register</h3>
-        <p class="s">Tell us a little. We will get back to you shortly.</p>
-        <form id="form">
-          <div id="regForm">
-            <form id="form">
-              <div class="reg-grid">
-
-                <!-- LEFT: student fields -->
-                <div class="reg-col">
-                  <label for="regStudent">Student name</label>
-                  <input id="regStudent" name="student" autocomplete="name" required>
-
-                  <div class="row">
-                    <div>
-                      <label for="regClass">Class</label>
-                      <select id="regClass" name="cls" required>
-                        <option value="">Select</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label for="regSchool">School</label>
-                      <input id="regSchool" name="school">
-                    </div>
-                  </div>
-
-                  <label for="regParent">Parent name</label>
-                  <input id="regParent" name="parent" required>
-
-                  <div class="row">
-                    <div>
-                      <label for="regPhone">Phone</label>
-                      <input id="regPhone" name="phone" type="tel" pattern="[0-9+\-\s()]{10,16}"
-                        title="Enter a valid 10 to 15 digit phone number" autocomplete="tel" required>
-                    </div>
-                    <div>
-                      <label for="regEmail">Email</label>
-                      <input id="regEmail" name="email" type="email" autocomplete="email">
-                    </div>
-                  </div>
-                </div>
-
-                <!-- RIGHT: chips, message, submit (order matters: 1st = chips, 2nd = message, 3rd = button) -->
-                <div class="reg-col-side">
-                  <div>
-                    <span class="lbl">Interested in (select any)</span>
-                    <div class="chips" id="chips"></div>
-                  </div>
-
-                  <div>
-                    <label for="regMsg">Message (optional)</label>
-                    <textarea id="regMsg" name="msg" rows="2"></textarea>
-                  </div>
-
-                  <button class="btn btn-accent" type="submit">Send registration</button>
-                </div>
-
-              </div>
-            </form>
+<!-- REGISTER MODAL -->
+<div class="modal" id="regModal" role="dialog" aria-modal="true" aria-labelledby="regTitle" aria-hidden="true">
+  <div class="box">
+    <button type="button" class="modal-close" data-close aria-label="Close registration form">×</button>
+    <div id="regForm">
+      <h3 id="regTitle">Register</h3>
+      <p class="s">Tell us a little. We will get back to you shortly.</p>
+      <form id="form">
+        <div class="reg-grid">
+          <div class="reg-col">
+            <label for="regStudent">Student name</label>
+            <input id="regStudent" name="student" autocomplete="name" required>
+            <div class="row">
+              <div><label for="regClass">Class</label><select id="regClass" name="cls" required><option value="">Select</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+              <div><label for="regSchool">School</label><input id="regSchool" name="school"></div>
+            </div>
+            <label for="regParent">Parent name</label><input id="regParent" name="parent" autocomplete="name" required>
+            <div class="row">
+              <div><label for="regPhone">Phone</label><input id="regPhone" name="phone" type="tel" pattern="[0-9+\-\s()]{10,16}" title="Enter a valid phone number" autocomplete="tel" required></div>
+              <div><label for="regEmail">Email</label><input id="regEmail" name="email" type="email" autocomplete="email"></div>
+            </div>
           </div>
-          <div class="ok" id="regOk">
-            <b>Thank you!</b>
-            <p>Your email app should have opened with the details. Please press Send there to complete it.</p>
+          <div class="reg-col-side">
+            <div><span class="lbl">Interested in (select any)</span><div class="chips" id="chips"></div></div>
+            <div><label for="regMsg">Message (optional)</label><textarea id="regMsg" name="msg" rows="3"></textarea></div>
+            <button class="btn btn-accent" type="submit">Send registration</button>
           </div>
-      </div>
-    </div>
-
-    <!-- LOGIN MODAL -->
-    <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
-      <div class="box">
-        <button type="button" class="modal-close" data-close aria-label="Close student login">×</button>
-        <div id="loginFormWrap">
-          <h3 id="loginTitle">Student login</h3>
-          <p class="s">The student portal is coming soon. Enrolled students will log in here for practice sets and
-            results.</p>
-          <form id="loginForm">
-            <label for="loginEmail">Email</label>
-            <input id="loginEmail" name="email" type="email" autocomplete="email" required>
-
-            <label for="loginPassword">Password</label>
-            <input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
-
-            <button class="btn btn-main" type="submit">Login</button>
-          </form>
         </div>
-        <div class="ok" id="loginOk">
-          <b>Portal coming soon</b>
-          <p>Student accounts are not active yet. We will share login details with enrolled batches once live.</p>
-        </div>
-      </div>
+      </form>
     </div>
+    <div class="ok" id="regOk" aria-live="polite"><b>Thank you!</b><p>Your email app should have opened with the details. Please press Send there to complete it.</p></div>
+  </div>
+</div>
 
-    
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
+  <div class="box">
+    <button type="button" class="modal-close" data-close aria-label="Close student login">×</button>
+    <div id="loginFormWrap">
+      <h3 id="loginTitle">Student login</h3>
+      <p class="s">The student portal is not active yet. Contact the Academy for enrolment and account details.</p>
+      <form id="loginForm">
+        <label for="loginEmail">Email</label><input id="loginEmail" name="email" type="email" autocomplete="email" required>
+        <label for="loginPassword">Password</label><input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+        <button class="btn btn-main" type="submit">Check account availability</button>
+      </form>
+    </div>
+    <div class="ok" id="loginOk" aria-live="polite"><b>Portal coming soon</b><p>Student accounts are not active yet. Please contact the Academy for help.</p></div>
+  </div>
+</div>
