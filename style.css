@@ -2024,6 +2024,11 @@ html {
     padding: 34px 0 28px;
   }
 
+  #about.panel,
+  #results.panel {
+    padding: 34px 0 28px;
+  }
+
   .hero-panel {
     min-height: 100svh;
     min-height: 100dvh;
