@@ -399,3 +399,10 @@ blockquote {
     padding: 20px;
   }
 }
+
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: 78svh;
+  }
+}
