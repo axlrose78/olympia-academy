@@ -401,7 +401,7 @@ header.is-compact .header-register {
       "brand actions"
       "links links";
     column-gap: 8px;
-    row-gap: 4px;
+    row-gap: 6px;
   }
 
   header .brand,
@@ -428,7 +428,7 @@ header.is-compact .header-register {
   header,
   header.is-compact {
     column-gap: 5px;
-    row-gap: 3px;
+    row-gap: 10px;
     padding-inline: 10px;
   }
 
