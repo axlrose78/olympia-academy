@@ -1,4 +1,3 @@
-
 {
   "stats": [
     {
@@ -90,9 +89,10 @@
       }
     },
     {
-      "name": "Student A.",
+      "name": "Aarav S. (Dummy)",
       "class": "6",
       "school": "Cambria International School",
+      "year": "2026",
       "categories": ["olympiads", "homi-bhabha"],
       "achievements": {
         "olympiads": ["NSO Gold", "IEO Silver"],
@@ -100,19 +100,22 @@
       }
     },
     {
-      "name": "Scholar B.",
+      "name": "Diya K. (Dummy)",
       "class": "8",
       "school": "Podar International School",
-      "categories": ["mat-jmo", "others"],
+      "year": "2026",
+      "categories": ["olympiads", "mat-jmo", "others"],
       "achievements": {
+        "olympiads": ["IMO Bronze"],
         "mat-jmo": ["JMO Top 50", "MAT 2026"],
         "others": ["IPM Merit Scholarship"]
       }
     },
     {
-      "name": "Achiever C.",
+      "name": "Rohan P. (Dummy)",
       "class": "5",
       "school": "Lourdes High School",
+      "year": "2025",
       "categories": ["olympiads", "others"],
       "achievements": {
         "olympiads": ["IMO Silver"],
@@ -120,34 +123,26 @@
       }
     },
     {
-      "name": "Learner D.",
+      "name": "Meera V. (Dummy)",
       "class": "6",
       "school": "B.K. Birla Public School",
-      "categories": ["homi-bhabha"],
+      "year": "2026",
+      "categories": ["homi-bhabha", "mat-jmo"],
       "achievements": {
-        "homi-bhabha": ["Homi Bhabha Practical Round"]
+        "homi-bhabha": ["Homi Bhabha Practical Round"],
+        "mat-jmo": ["MAT 2026"]
       }
     },
     {
-      "name": "Candidate E.",
+      "name": "Kabir N. (Dummy)",
       "class": "4",
       "school": "St. Xavier's High School",
-      "categories": ["olympiads"],
+      "year": "2026",
+      "categories": ["olympiads", "others"],
       "achievements": {
-        "olympiads": ["IMO Gold", "NCO Distinction"]
-      }
-    },
-    {
-      "name": "Student F.",
-      "class": "8",
-      "school": "Arya Gurukul",
-      "categories": ["olympiads", "mat-jmo", "others"],
-      "achievements": {
-        "olympiads": ["IMO Zonal Rank 3"],
-        "mat-jmo": ["MAT 2026"],
-        "others": ["NTSE Foundation Topper"]
+        "olympiads": ["IMO Gold", "NSO Silver"],
+        "others": ["Mental Maths Champion"]
       }
     }
   ]
 }
-

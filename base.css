@@ -1,0 +1,606 @@
+/* =========================================================
+   OLYMPIA ACADEMY — BASE STYLESHEET
+   Theme tokens, reset, typography, buttons, modals, footer
+   ========================================================= */
+
+/* THEME TOKENS */
+:root {
+  --main: #0F5C63;
+  --main-hi: #7fb8bc;
+  --accent: #C65D7B;
+  --accent-hover: #b5516e;
+  --bg: #0b1819;
+  --panel: #112628;
+  --panel2: #163034;
+  --line: #21403f;
+  --text: #e8eeee;
+  --muted: #93a9aa;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  --radius: 14px;
+  --transition: .25s ease;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* HTML */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(127, 184, 188, .4) var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(127, 184, 188, .35);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-hi);
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* LOCK BACKGROUND WHEN MODAL IS OPEN */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* GENERAL ELEMENTS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--main-hi);
+  outline-offset: 3px;
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.14;
+  color: #fff;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: clamp(28px, 4.5vw, 46px);
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* CONTENT WRAPPER */
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  font: 600 15px/1.2 var(--sans);
+  cursor: pointer;
+  transition: background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 12px 30px -12px var(--accent);
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  border-color: var(--main-hi);
+  background: transparent;
+  color: var(--main-hi);
+}
+
+.btn-ghost:hover {
+  background: var(--main-hi);
+  color: var(--bg);
+}
+
+.btn-main {
+  background: var(--main);
+  color: #fff;
+}
+
+.btn-main:hover {
+  background: #13727a;
+}
+
+/* FOOTER */
+.site-footer {
+  padding: 26px 20px calc(26px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.site-footer a:hover {
+  color: var(--main-hi);
+}
+
+/* =========================================================
+   MODALS & FORMS
+   ========================================================= */
+
+/* MODAL BACKDROP */
+.modal {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: rgba(5, 12, 13, .75);
+  backdrop-filter: blur(4px);
+  overscroll-behavior: contain;
+}
+
+.modal.open {
+  display: flex;
+}
+
+/* MODAL BOX */
+.box {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  max-height: 92vh;
+  max-height: 92dvh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 34px;
+  scroll-padding-block: 24px;
+
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+
+  scrollbar-width: none;
+  animation: modal-pop .25s ease;
+}
+
+.box::-webkit-scrollbar {
+  display: none;
+}
+
+/* REGISTRATION MODAL */
+#regModal .box {
+  max-width: 860px;
+  padding: 34px 38px;
+}
+
+/* REGISTRATION GRID — two columns:
+   left  = student fields
+   right = exam chips on top, message below
+   bottom = submit button spanning the full width */
+.reg-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  grid-template-areas:
+    "fields chips"
+    "fields message"
+    "submit submit";
+  grid-template-rows: auto 1fr auto;
+  gap: 18px 32px;
+  align-items: start;
+}
+
+.reg-col {
+  grid-area: fields;
+}
+
+/* display: contents lets the right-side children (chips block, message
+   block, submit button) join .reg-grid directly so they can be placed
+   by area name without changing your HTML */
+.reg-col-side {
+  display: contents;
+}
+
+.reg-col-side > :nth-child(1) {
+  grid-area: chips;
+}
+
+.reg-col-side > :nth-child(2) {
+  grid-area: message;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+/* message box grows to fill the space under the chips */
+.reg-col-side > :nth-child(2) textarea {
+  flex: 1;
+  min-height: 110px;
+}
+
+.reg-col,
+.reg-col-side > * {
+  min-width: 0;
+}
+
+/* line up the first heading of every column */
+.reg-col > :first-child,
+.reg-col-side > * > :first-child {
+  margin-top: 4px;
+}
+
+/* REGISTRATION SUBMIT BUTTON */
+#regModal .box .btn {
+  grid-area: submit;
+  justify-self: stretch;
+  width: 100%;
+  height: 40px;
+  margin-top: 6px;
+  border-radius: 999px;
+  font-size: 15px;
+}
+
+/* MODAL ANIMATION */
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* CLOSE BUTTON */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.modal-close:hover {
+  background: rgba(127, 184, 188, .12);
+  color: #fff;
+}
+
+/* MODAL HEADINGS
+   padding-right keeps long titles from running under the close button */
+.box h3 {
+  padding-right: 36px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.box p.s {
+  margin: 4px 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* GENERAL MODAL BUTTON */
+.box .btn {
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* FORM LABELS */
+.modal label,
+.modal .lbl {
+  display: block;
+  margin: 12px 0 5px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* FORM INPUTS */
+.modal input,
+.modal select,
+.modal textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px var(--sans);
+}
+
+/* MESSAGE TEXTAREA */
+.modal textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* INPUT FOCUS */
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+  border-color: transparent;
+  outline: 2px solid var(--main-hi);
+}
+
+/* FORM ROW */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* EXAM CHIPS
+   position: relative anchors the visually-hidden checkboxes so the modal
+   doesn't jump/scroll to a stray input when a chip is focused on mobile */
+.chips {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+.chips input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chips label {
+  margin: 0;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color var(--transition),
+    background var(--transition),
+    color var(--transition);
+}
+
+.chips label:hover {
+  border-color: var(--main-hi);
+}
+
+.chips input:checked + label {
+  border-color: var(--main-hi);
+  background: var(--main);
+  color: #fff;
+}
+
+.chips input:focus-visible + label {
+  outline: 2px solid var(--main-hi);
+  outline-offset: 2px;
+}
+
+/* SUCCESS MESSAGE */
+.ok {
+  display: none;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.ok b {
+  color: var(--main-hi);
+  font: 600 28px var(--serif);
+}
+
+.ok p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+/* =========================================================
+   RESPONSIVE  (widest -> narrowest)
+   ========================================================= */
+
+/* TABLET: registration grid stacks */
+@media (max-width: 720px) {
+  .reg-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "fields"
+      "chips"
+      "message"
+      "submit";
+    grid-template-rows: none;
+    gap: 18px;
+  }
+
+  .reg-col-side > :nth-child(2) textarea {
+    flex: none;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  /* Modal fills the screen with a small gutter and respects notches */
+  .modal {
+    padding: max(12px, env(safe-area-inset-top, 0px)) 12px max(12px, env(safe-area-inset-bottom, 0px));
+  }
+
+  .box,
+  #regModal .box {
+    max-height: 94vh;
+    max-height: 94dvh;
+    padding: 26px 22px;
+    border-radius: 18px;
+  }
+
+  .box h3 {
+    font-size: 26px;
+  }
+
+  /* Bigger tap target for the close button */
+  .modal-close {
+    top: 10px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* 16px stops iOS from zooming into inputs on focus */
+  .modal input,
+  .modal select,
+  .modal textarea {
+    padding: 11px 13px;
+    font-size: 16px;
+  }
+
+  .modal textarea {
+    min-height: 110px;
+  }
+
+  /* Easier-to-tap chips */
+  .chips {
+    gap: 8px;
+  }
+
+  .chips label {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  #regModal .box .btn {
+    min-height: 52px;
+  }
+}
+
+/* LARGE PHONES: fields and sections go single column */
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .box,
+  #regModal .box {
+    padding: 24px 18px;
+  }
+
+  .box h3 {
+    font-size: 24px;
+  }
+
+  .reg-grid {
+    gap: 14px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

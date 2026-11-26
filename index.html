@@ -3,110 +3,85 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Olympia Academy · Learn. Practice. Achieve.</title>
   <meta name="description" content="Olympia Academy, Kalyan: Olympiad, MAT and JMO coaching for Classes 3 to 8.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Olympia Academy · Learn. Practice. Achieve.">
+  <meta property="og:description" content="Olympiad, MAT and JMO coaching for Classes 3 to 8 in Kalyan (West).">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="pillar" viewBox="0 0 64 72">
-      <g fill="#E6E8E8">
-        <rect x="22" y="4" width="20" height="4" rx="1" />
-        <path d="M12 12h40a6 6 0 0 1 0 10H12a6 6 0 0 1 0-10z" />
-        <rect x="22" y="24" width="5" height="30" />
-        <rect x="29.5" y="24" width="5" height="30" />
-        <rect x="37" y="24" width="5" height="30" />
-        <rect x="16" y="56" width="32" height="4" rx="1" />
-        <rect x="10" y="62" width="44" height="5" rx="1" />
-      </g>
-    </symbol>
-  </svg>
+  <div id="header-container"></div>
 
-  <header>
-    <a class="brand" data-go="0">
+  <main>
 
-      <svg>
-        <use href="#pillar" />
-      </svg>
-
-      <span class="brand-name">
-
-        <span class="brand-stacked">
-          <span>OLYMPIA</span>
-          <span>ACADEMY</span>
-        </span>
-
-        <span class="brand-inline">
-          OLYMPIA <i>·</i> ACADEMY
-        </span>
-
-      </span>
-
-    </a>
-    <nav class="links">
-      <a data-go="1">About</a>
-      <a data-go="2">Results</a>
-      <a data-go="3">Contact</a>
-    </nav>
-
-    <button class="btn btn-ghost" id="loginBtn">Login</button>
-
-    <button class="btn btn-accent header-register" data-open>
-      Register
-    </button>
-  </header>
-
-  <main id="scroller">
-
-    <section class="panel" id="home" style="position:relative">
-      <div class="inner hero">
-        <svg class="big">
-          <use href="#pillar" />
-        </svg>
-        <h1>Learn. Practice. <span>Achieve.</span></h1>
-        <p>Olympiad and aptitude coaching for students of Classes 3 to 8, in the heart of Kalyan.</p>
-        <button class="btn btn-accent" data-open>Register now</button>
-        <small>Small batches · Now enrolling · Kalyan (West)</small>
+    <section class="panel hero-panel" id="home">
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="hero-track" id="heroTrack">
+          <div class="hero-slide">
+            <div class="hero">
+              <img class="hero-emblem" src="images/logo.svg" alt="" aria-hidden="true">
+              <h1>Learn. Practice. <span>Achieve.</span></h1>
+              <p>Olympiad and aptitude coaching for students of Classes 3 to 8, in the heart of Kalyan.</p>
+              <div class="hero-actions">
+                <button type="button" class="btn btn-accent" data-open>Register now</button>
+                <a class="btn btn-ghost" href="courses.html">Explore courses</a>
+              </div>
+              <small>Small batches · Now enrolling · Kalyan (West)</small>
+            </div>
+          </div>
+        </div>
+        <div class="hero-dots" id="heroDots"></div>
       </div>
+
+      <a class="hint" href="#about" aria-label="Scroll to About">
+        <span>SCROLL</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </a>
     </section>
 
-    <section class="panel" id="about" style="position:relative">
-      <div class="inner about-inner">
-
-        <div class=" cols">
+    <section class="panel" id="about">
+      <div class="wrap">
+        <div class="cols">
           <div>
             <div class="eyebrow">About us</div>
             <h2>Foundations first, Olympiads next</h2>
             <p>Olympia Academy, in Kalyan (West), helps school students build mathematical aptitude, logical reasoning
-              and
-              exam skills. Understand the concept, practise with intent, then take on non-routine problems with
+              and exam skills. Understand the concept, practise with intent, then take on non-routine problems with
               confidence.</p>
-            <p>Classes use topic-wise practice, mock tests, doubt-clearing and regular updates to parents. Powered by
-              Olympiad Hub.</p>
+            <p>Classes use topic-wise practice, mock tests, doubt-clearing and regular updates to parents.</p>
+            <a class="btn btn-ghost about-cta" href="courses.html">Explore courses</a>
           </div>
+
           <div>
             <div class="eyebrow">Target exams</div>
             <div class="exams">
               <div class="exam"><b>MAT / JMO</b></div>
-              <div class="exam"><b>Homi Bhabha</b><span></span></div>
+              <div class="exam"><b>Homi Bhabha</b></div>
               <div class="exam"><b>IMO</b></div>
               <div class="exam"><b>NSO</b></div>
-              <div class="exam"><b>IEO</b><span></span></div>
-              <div class="exam"><b>IPM</b><span></span></div>
-              <div class="exam"><b>Mental Maths</b><span></span></div>
-              <div class="exam"><b>Foundation</b><span></span></div>
+              <div class="exam"><b>IEO</b></div>
+              <div class="exam"><b>IPM</b></div>
+              <div class="exam"><b>Mental Maths</b></div>
+              <div class="exam"><b>Foundation</b></div>
             </div>
           </div>
         </div>
+
         <div class="testimony-heading">
           <div>
             <div class="eyebrow">What parents say</div>
@@ -114,466 +89,89 @@
           </div>
         </div>
         <div class="testimony-rail" id="testimonyRail"></div>
-
       </div>
-
     </section>
+
     <section class="panel" id="results">
-      <div class="inner">
-
-        <!-- TOP HEADER: TITLE LEFT, STATS RIGHT -->
+      <div class="wrap results-layout">
         <div class="results-top">
-
           <div class="results-intro">
-            <h2 style="color: var(--accent);">OUR HALL OF FAME</h2>
-            <p class="lead">
+            <h2>OUR HALL OF FAME</h2>
+            <p class="lead">Celebrating student achievements across Olympiads, science competitions, and aptitude exams.
             </p>
           </div>
-
           <div class="stats" id="statsContainer"></div>
-
         </div>
 
-        <!-- STUDENT RESULTS -->
-
         <div class="results-content">
-
-          <!-- CATEGORY HEADER -->
           <div class="category-header">
-
             <div class="category-title">
-
-              <h3 class="subheading" id="categoryTitle">
-                Olympiads
-              </h3>
+              <div class="category-number" id="categoryNumber">01 / 04</div>
+              <h3 class="subheading" id="categoryTitle">Olympiads</h3>
               <p class="category-description" id="categoryDescription">
                 Celebrating excellence in Olympiads.
               </p>
             </div>
 
-            <!-- NAVIGATION ARROWS -->
             <div class="category-controls">
-              <button class="category-arrow" id="prevCategory" aria-label="Previous category">
+              <button type="button" class="category-arrow" id="prevCategory" aria-label="Previous category">
                 &#8592;
               </button>
-
-              <button class="category-arrow" id="nextCategory" aria-label="Next category">
+              <button type="button" class="category-arrow" id="nextCategory" aria-label="Next category">
                 &#8594;
               </button>
             </div>
-
           </div>
 
-          <!-- FOUR HORIZONTAL PAGES -->
           <div class="category-viewport" id="categoryViewport">
-
-            <div class="category-track" id="categoryTrack">
-              <!-- Pages generated from JSON -->
-            </div>
-
+            <div class="category-track" id="categoryTrack"></div>
           </div>
 
-          <!-- PAGE INDICATORS -->
-          <div class="category-pagination" id="categoryPagination">
-          </div>
-
+          <div class="category-pagination" id="categoryPagination"></div>
         </div>
-
-
       </div>
     </section>
 
     <section class="panel" id="contact">
-      <div class="inner" style="text-align:center">
+      <div class="wrap contact-inner">
         <div class="eyebrow">Join us</div>
         <h2>Ready to begin?</h2>
-        <p class="lead" style="margin:0 auto 22px">Send a short form and we will call you back with batch details.</p>
-        <button class="btn btn-accent" data-open>Register now</button>
-        <div class="cgrid" style="text-align:left">
+        <p class="lead">Send a short form and we will call you back with batch details.</p>
+        <button type="button" class="btn btn-accent" data-open>Enquire now</button>
+
+        <div class="cgrid">
           <div>
-            <h3>Visit us</h3>Shop No. 68, Sai Nirvana Downtown Sahad,<br>Railway Station Road, Near Century
-            Chemicals,<br>Kalyan (West), Maharashtra 421301
+            <h3>Visit us</h3>
+            Shop No. 68, Sai Nirvana Downtown Sahad,<br>
+            Railway Station Road, Near Century Chemicals,<br>
+            Kalyan (West), Maharashtra 421301
           </div>
           <div>
-            <h3>Contact</h3><a href="tel:+917977576252">+91 79775 76252</a><br><a
-              href="mailto:olympiaacademy.in@gmail.com">olympiaacademy.in@gmail.com</a><br><a
-              href="https://www.theolympiadhub.com" target="_blank" rel="noopener">www.theolympiadhub.com</a>
+            <h3>Contact</h3>
+            <a href="tel:+917977576252">+91 79775 76252</a><br>
+            <a href="mailto:olympiaacademy.in@gmail.com">olympiaacademy.in@gmail.com</a><br>
+            <a href="https://www.theolympiadhub.com" target="_blank"
+              rel="noopener noreferrer">www.theolympiadhub.com</a>
           </div>
           <div>
-            <h3>Details</h3>Classes 3 to 8<br>Offline batches in Kalyan<br>Powered by Olympiad Hub
+            <h3>Details</h3>
+            Classes 3 to 8<br>
+            Offline batches in Kalyan<br>
+            Powered by Olympiad Hub
           </div>
         </div>
-        <div class="copy">© <span id="yr"></span> Olympia Academy, Kalyan. All rights reserved.</div>
       </div>
     </section>
+
   </main>
 
-  <!-- REGISTER MODAL -->
-  <div class="modal" id="regModal">
-    <div class="box">
-      <button class="x" data-close aria-label="Close">×</button>
-      <div id="regForm">
-        <h3>Register</h3>
-        <p class="s">Tell us a little. We will get back to you shortly.</p>
-        <form id="form">
-          <label>Student name</label><input name="student" required>
-          <div class="row">
-            <div><label>Class</label><select name="cls" required>
-                <option value="">Select</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-              </select></div>
-            <div><label>School</label><input name="school"></div>
-          </div>
-          <label>Parent name</label><input name="parent" required>
-          <div class="row">
-            <div><label>Phone</label><input name="phone" type="tel" pattern="[0-9+ ]{10,15}" required></div>
-            <div><label>Email</label><input name="email" type="email"></div>
-          </div>
-          <span class="lbl">Interested in (select any)</span>
-          <div class="chips" id="chips"></div>
-          <label>Message (optional)</label><textarea name="msg" rows="2"></textarea>
-          <button class="btn btn-accent" type="submit">Send registration</button>
-        </form>
-      </div>
-      <div class="ok" id="regOk"><b>Thank you!</b>
-        <p style="margin-top:8px;color:var(--muted)">Your email app should have opened with the details. Please press
-          Send there to complete it.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- LOGIN MODAL (placeholder) -->
-  <div class="modal" id="loginModal">
-    <div class="box">
-      <button class="x" data-close aria-label="Close">×</button>
-      <h3>Student login</h3>
-      <p class="s">The student portal is coming soon. Enrolled students will log in here for practice sets and results.
-      </p>
-      <form onsubmit="event.preventDefault();alert('Portal coming soon.')">
-        <label>Email</label><input type="email" required>
-        <label>Password</label><input type="password" required>
-        <button class="btn btn-main" type="submit">Login</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
-    const MAIL = "olympiaacademy.in@gmail.com";   // <-- your inbox
-    const EXAMS = ["MAT / JMO", "Homi Bhabha", "IMO", "NSO", "IEO", "IPM", "Mental Maths", "Foundation"];
-
-    // exam chips (multi-select buttons)
-    $('#chips').innerHTML = EXAMS.map((e, i) => `<input type="checkbox" name="exam" value="${e}" id="ex${i}"><label for="ex${i}">${e}</label>`).join('');
-
-    // panel navigation + active state
-    const main = $('#scroller'), panels = [...$$('.panel')];
-
-    const header = document.querySelector('header');
-
-    function updateHeader() {
-      header.classList.toggle('is-compact', main.scrollTop > 40);
-    }
-
-    main.addEventListener('scroll', updateHeader, { passive: true });
-    updateHeader();
-
-    $$('[data-go]').forEach(b => b.onclick = () => panels[+b.dataset.go].scrollIntoView({ behavior: 'smooth' }));
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      const i = panels.indexOf(e.target);
-      $$('.links a').forEach(a => a.classList.toggle('on', +a.dataset.go === i));
-    }), { root: main, threshold: .6 });
-    panels.forEach(p => io.observe(p));
-
-    // counters (once)
-    let counted = false;
-    function count() {
-      if (counted) return; counted = true;
-      $$('[data-n]').forEach(c => {
-        const n = +c.dataset.n, s = c.dataset.s || ''; let i = 0;
-        const t = setInterval(() => { i += Math.max(1, Math.ceil(n / 40)); if (i >= n) { i = n; clearInterval(t) } c.textContent = i + s }, 30)
-      });
-    }
-
-    // modals
-    $$('[data-open]').forEach(b => b.onclick = () => { $('#regForm').style.display = 'block'; $('#regOk').style.display = 'none'; $('#regModal').classList.add('open'); });
-    $('#loginBtn').onclick = () => $('#loginModal').classList.add('open');
-    $$('[data-close]').forEach(b => b.onclick = () => b.closest('.modal').classList.remove('open'));
-    $$('.modal').forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open') }));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') $$('.modal').forEach(m => m.classList.remove('open')) });
-
-    // registration -> email
-    $('#form').addEventListener('submit', async e => {
-      e.preventDefault();
-      const fd = new FormData(e.target), d = Object.fromEntries(fd);
-      d.exam = fd.getAll('exam').join(', ') || 'Not selected';
-      /* OPTION A (no setup): opens the visitor's email app, pre-filled.
-         OPTION B (silent): create a free form at formspree.io and paste its URL below. */
-      const FORMSPREE = ""; // e.g. "https://formspree.io/f/xxxxxxx"
-      if (FORMSPREE) {
-        try {
-          const r = await fetch(FORMSPREE, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
-          if (r.ok) { done('Your registration has been received. We will call you soon.'); return; }
-        } catch (_) { }
-      }
-      const q = v => encodeURIComponent(v || '-'), nl = '%0D%0A';
-      const body = `New registration${nl}${nl}Student: ${q(d.student)}${nl}Class: ${q(d.cls)}${nl}School: ${q(d.school)}${nl}Parent: ${q(d.parent)}${nl}Phone: ${q(d.phone)}${nl}Email: ${q(d.email)}${nl}Interested in: ${q(d.exam)}${nl}Message: ${q(d.msg)}`;
-      location.href = `mailto:${MAIL}?subject=${encodeURIComponent('Registration: ' + d.student + ' (Class ' + d.cls + ')')}&body=${body}`;
-      done();
-    });
-    function done(t) { $('#regForm').style.display = 'none'; const o = $('#regOk'); o.style.display = 'block'; if (t) o.querySelector('p').textContent = t; $('#form').reset(); }
-    $('#yr').textContent = new Date().getFullYear();
-
-    // ========================================
-    // LOAD RESULTS AND TESTIMONIALS FROM JSON
-    // ========================================
-
-
-    async function loadAcademyData() {
-      try {
-        const [resultsResponse, testimonialsResponse] =
-          await Promise.all([
-            fetch('./results.json'),
-            fetch('./testimonials.json')
-          ]);
-
-        if (!resultsResponse.ok || !testimonialsResponse.ok) {
-          throw new Error('Could not load academy data');
-        }
-
-        const results = await resultsResponse.json();
-        const testimonials = await testimonialsResponse.json();
-
-        renderStats(results.stats);
-
-        // NEW FOUR-CATEGORY SYSTEM
-        renderCategories(results.categories, results.students);
-
-        renderTestimonials(testimonials.testimonials);
-
-      } catch (error) {
-        console.error('Academy data loading failed:', error);
-      }
-    }
-
-    // Safely render text from JSON
-    function escapeHTML(value) {
-      return String(value ?? '').replace(/[&<>"']/g, char => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      })[char]);
-    }
-
-    // Render statistics
-    function renderStats(stats) {
-      document.getElementById('statsContainer').innerHTML =
-        stats.map(stat => `
-      <div class="stat">
-        <b>${escapeHTML(stat.value)}${escapeHTML(stat.suffix)}</b>
-        <span>${escapeHTML(stat.label)}</span>
-      </div>
-    `).join('');
-    }
-
-    // Render student achievements
-
-    /* =========================================
-       HALL OF FAME CATEGORY NAVIGATION
-    ========================================= */
-
-    let activeCategory = 0;
-
-    function renderCategories(categories, students) {
-
-      const track = document.getElementById('categoryTrack');
-      const pagination = document.getElementById('categoryPagination');
-      const viewport = document.getElementById('categoryViewport');
-
-      track.innerHTML = categories.map((category, index) => {
-
-        const categoryStudents = students.filter(student =>
-          student.categories.includes(category.id)
-        );
-
-        return `
-      <div class="category-page" data-category="${category.id}">
-
-        ${categoryStudents.length
-            ? `
-            <div class="category-students">
-
-              ${categoryStudents.map((student, studentIndex) => `
-                <div class="hall-card">
-
-  <div class="hall-info">
-
-    <h3>${escapeHTML(student.name)}</h3>
-
-    <small>Class ${escapeHTML(student.class)} · ${escapeHTML(student.year)} </small>
-
-    <div>
-      ${(student.achievements[category.id] || [])
-                .map(achievement => {
-                  const medalClass = achievement.toLowerCase().includes("gold")
-                    ? "gold"
-                    : achievement.toLowerCase().includes("silver")
-                      ? "silver"
-                      : achievement.toLowerCase().includes("bronze")
-                        ? "bronze"
-                        : "";
-
-                  return `<span class="tag ${medalClass}">${escapeHTML(achievement)}</span>`;
-                }).join('')}
-    </div>
-
-  </div>
-
-  <div class="hall-profile">
-    <img
-      src="${escapeHTML(student.photo || 'images/default-avatar.png')}"
-      alt="${escapeHTML(student.name)}"
-      onerror="this.src='images/stockpfp.png'"
-    >
-  </div>
-
-</div>
-              `).join('')}
-
-            </div>
-          `
-            : `
-            <div class="category-empty">
-              Achievements coming soon.
-            </div>
-          `
-          }
-
-      </div>
-    `;
-
-      }).join('');
-
-      // Generate pagination dots
-
-      pagination.innerHTML = categories.map((category, index) => `
-    <button
-      class="category-dot ${index === 0 ? 'active' : ''}"
-      data-index="${index}"
-      aria-label="Go to ${escapeHTML(category.title)}">
-    </button>
-  `).join('');
-
-      activeCategory = 0;
-
-      // Navigation buttons
-
-      document.getElementById('prevCategory').onclick = () => {
-        goToCategory(activeCategory - 1);
-      };
-
-      document.getElementById('nextCategory').onclick = () => {
-        goToCategory(activeCategory + 1);
-      };
-
-      // Pagination clicks
-
-      pagination.querySelectorAll('.category-dot').forEach(dot => {
-        dot.onclick = () => {
-          goToCategory(Number(dot.dataset.index));
-        };
-      });
-
-      // Update active page after swipe
-
-      viewport.onscroll = () => {
-        const index = Math.round(
-          viewport.scrollLeft / viewport.clientWidth
-        );
-
-        updateCategoryUI(index, categories);
-      };
-
-      updateCategoryUI(0, categories);
-    }
-
-
-    function goToCategory(index) {
-
-      const viewport = document.getElementById('categoryViewport');
-      const categories = document.querySelectorAll('.category-page');
-
-      if (index < 0 || index >= categories.length) return;
-
-      activeCategory = index;
-
-      viewport.scrollTo({
-        left: index * viewport.clientWidth,
-        behavior: 'smooth'
-      });
-
-    }
-
-
-    function updateCategoryUI(index, categories) {
-
-      if (index < 0 || index >= categories.length) return;
-
-      activeCategory = index;
-
-      const category = categories[index];
-
-      const numberElement = document.getElementById('categoryNumber');
-
-      if (numberElement) {
-        numberElement.textContent =
-          `${String(index + 1).padStart(2, '0')} / 04`;
-      }
-
-      document.getElementById('categoryTitle').textContent =
-        category.title;
-
-      document.getElementById('categoryDescription').textContent =
-        category.description;
-
-      document.getElementById('prevCategory').disabled =
-        index === 0;
-
-      document.getElementById('nextCategory').disabled =
-        index === categories.length - 1;
-
-      document.querySelectorAll('.category-dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-
-    }
-
-    // Render parent testimonials
-
-    function renderTestimonials(testimonials) {
-      const rail = document.getElementById('testimonyRail');
-
-      rail.innerHTML = testimonials.map(item => `
-    <div class="card">
-      <p class="quote">
-        "${escapeHTML(item.quote)}"
-      </p>
-      <p>${escapeHTML(item.byline)}</p>
-    </div>
-  `).join('');
-    }
-
-    // Load everything
-    loadAcademyData();
-
-  </script>
+  <footer class="site-footer">
+    © <span id="yr"></span> Olympia Academy, Kalyan. All rights reserved.
+  </footer>
+
+  <!-- Shared forms are loaded by home.js -->
+  <div id="forms-container"></div>
+  <script src="home.js" defer></script>
 </body>
 
 </html>
