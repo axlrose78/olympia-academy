@@ -172,6 +172,7 @@ header.is-compact .header-register {
 }
 
 @media (max-width: 1260px) {
+  :root { --header-offset: 98px; }
   header,
   header.is-compact {
     padding: 0 24px;
