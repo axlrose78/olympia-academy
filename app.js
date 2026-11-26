@@ -23,6 +23,24 @@
     yearEl.textContent = String(new Date().getFullYear());
   }
 
+  // Mark the shared navigation link for the current page.
+  const pageName = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll("header .links a").forEach((link) => {
+    const target = new URL(link.href, location.href);
+    const isCurrentPage = target.pathname.split("/").pop() === pageName;
+    const isCurrentSection = isCurrentPage && target.hash && target.hash === location.hash;
+    if (isCurrentPage && (pageName === "courses.html" || !target.hash)) {
+      link.classList.add("on");
+      link.setAttribute("aria-current", "page");
+    } else if (isCurrentSection) {
+      link.classList.add("on");
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.classList.remove("on");
+      link.removeAttribute("aria-current");
+    }
+  });
+
   // 2. Compact header on scroll
   const header = document.querySelector("header");
   if (header) {
@@ -59,8 +77,6 @@
     closeModals(false);
     lastTrigger = trigger || document.activeElement;
     if (resetFn) resetFn();
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
