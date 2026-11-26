@@ -169,7 +169,7 @@ header.is-compact .header-register {
   font-size: 13.5px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1260px) {
   header,
   header.is-compact {
     padding: 0 24px;
