@@ -2,6 +2,8 @@
    OLYMPIA ACADEMY — SHARED HEADER
    ========================================================= */
 
+:root { --header-offset: 144px; }
+
 header {
   position: fixed;
   z-index: 20;
@@ -243,7 +245,8 @@ header.is-compact .header-register {
   header.is-compact #loginBtn,
   header .header-register,
   header.is-compact .header-register {
-    padding: 7px 12px;
+    min-height: 40px;
+    padding: 8px 14px;
     font-size: 12px;
   }
 
@@ -252,21 +255,26 @@ header.is-compact .header-register {
     order: 3;
     flex: 1 1 100%;
     justify-content: center;
-    gap: clamp(18px, 7vw, 36px);
+    gap: clamp(12px, 4vw, 24px);
     padding-top: 6px;
     border-top: 1px solid rgba(127, 184, 188, .12);
     font-size: 13px;
   }
 
   header .links a {
-    padding: 4px 0;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 4px;
   }
 }
 
 @media (max-width: 420px) {
+  :root { --header-offset: 90px; }
+
   header,
   header.is-compact {
-    padding: 8px 12px;
+    padding: 7px 12px 8px;
   }
 
   header .brand-name,
@@ -278,8 +286,9 @@ header.is-compact .header-register {
   header.is-compact #loginBtn,
   header .header-register,
   header.is-compact .header-register {
-    padding: 6px 10px;
-    font-size: 11px;
+    min-height: 38px;
+    padding: 7px 10px;
+    font-size: 12px;
   }
 
   header .links,
