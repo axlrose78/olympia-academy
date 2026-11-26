@@ -32,7 +32,7 @@
 /* HTML */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: var(--header-offset, 144px);
   scrollbar-width: thin;
   scrollbar-color: rgba(127, 184, 188, .4) var(--bg);
   -webkit-text-size-adjust: 100%;
