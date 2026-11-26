@@ -2168,3 +2168,27 @@ html {
     padding: 16px;
   }
 }
+
+
+@media (max-width: 650px) {
+  .results-top .stat {
+    min-height: 72px;
+    gap: 5px;
+    padding: 10px 8px;
+    border-radius: 12px;
+  }
+
+  .results-top .stat b {
+    font-size: 24px;
+  }
+
+  .results-top .stat span {
+    font-size: 9px;
+    letter-spacing: .05em;
+    line-height: 1.35;
+  }
+
+  .category-viewport {
+    height: clamp(400px, 68svh, 520px);
+  }
+}
