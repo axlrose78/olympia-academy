@@ -306,3 +306,86 @@ header.is-compact .header-register {
     transition: none !important;
   }
 }
+
+
+/* Keep the brand and actions together on compact headers. */
+@media (max-width: 1260px) {
+  header .brand,
+  header.is-compact .brand {
+    flex: 0 1 auto;
+    min-width: 0;
+    gap: 7px;
+  }
+
+  header .brand-logo,
+  header.is-compact .brand-logo {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 28px;
+  }
+
+  header .brand-name,
+  header.is-compact .brand-name {
+    min-width: 0;
+    font-size: clamp(12px, 3.4vw, 17px);
+    letter-spacing: .02em;
+  }
+
+  header .header-actions {
+    flex: 0 0 auto;
+    margin-left: auto;
+    gap: 5px;
+  }
+
+  header #loginBtn,
+  header.is-compact #loginBtn,
+  header .header-register,
+  header.is-compact .header-register {
+    min-height: 38px;
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  header .brand-name,
+  header.is-compact .brand-name {
+    font-size: clamp(11px, 3.2vw, 13.5px);
+  }
+
+  header #loginBtn,
+  header.is-compact #loginBtn,
+  header .header-register,
+  header.is-compact .header-register {
+    min-height: 36px;
+    padding: 6px 8px;
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 340px) {
+  header .brand,
+  header.is-compact .brand {
+    gap: 5px;
+  }
+
+  header .brand-logo,
+  header.is-compact .brand-logo {
+    flex-basis: 20px;
+    width: 20px;
+    height: 24px;
+  }
+
+  header .brand-name,
+  header.is-compact .brand-name {
+    font-size: 11px;
+  }
+
+  header #loginBtn,
+  header.is-compact #loginBtn,
+  header .header-register,
+  header.is-compact .header-register {
+    padding-inline: 7px;
+    font-size: 10px;
+  }
+}
