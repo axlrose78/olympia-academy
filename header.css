@@ -389,3 +389,63 @@ header.is-compact .header-register {
     font-size: 10px;
   }
 }
+
+
+/* Use a fixed two-row mobile header so actions always stay beside the brand. */
+@media (max-width: 1260px) {
+  header,
+  header.is-compact {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand actions"
+      "links links";
+    column-gap: 8px;
+    row-gap: 4px;
+  }
+
+  header .brand,
+  header.is-compact .brand {
+    grid-area: brand;
+  }
+
+  header .header-actions {
+    grid-area: actions;
+    justify-self: end;
+    margin-left: 0;
+  }
+
+  header .links,
+  header.is-compact .links {
+    grid-area: links;
+    width: 100%;
+    flex: none;
+    order: initial;
+  }
+}
+
+@media (max-width: 340px) {
+  header,
+  header.is-compact {
+    column-gap: 5px;
+    row-gap: 3px;
+    padding-inline: 10px;
+  }
+
+  header .header-actions {
+    gap: 3px;
+  }
+
+  header #loginBtn,
+  header.is-compact #loginBtn,
+  header .header-register,
+  header.is-compact .header-register {
+    padding-inline: 6px;
+    font-size: 9.5px;
+  }
+
+  header .brand-name,
+  header.is-compact .brand-name {
+    font-size: 10.5px;
+  }
+}
