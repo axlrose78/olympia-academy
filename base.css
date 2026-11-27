@@ -482,6 +482,21 @@ h2 {
   margin-top: 8px;
   color: var(--muted);
 }
+.modal label:has(+ :required)::after,
+.modal .lbl.req::after {
+  content: " *";
+  color: var(--accent);
+}
+
+.field-error {
+  margin-top: 8px;
+  color: #f08ca6;
+  font-size: 13px;
+}
+
+.chips.invalid label {
+  border-color: var(--accent);
+}
 
 /* =========================================================
    RESPONSIVE  (widest -> narrowest)
